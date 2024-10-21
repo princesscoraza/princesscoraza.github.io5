@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Card Slider HTML and CSS | CodingNepal</title>
+  <title>Slide Folder</title>
   <!-- Linking SwiperJS CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <link rel="stylesheet" href="style.css">
@@ -47,7 +47,6 @@
       }
     }
 
-    /* Additional CSS from your original code */
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
 
     * {
@@ -62,9 +61,8 @@
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      /* Set GIF as the background */
       background: url("https://i.pinimg.com/originals/b9/8f/b1/b98fb1cb16fc0dfe8a15f0a3d018552e.gif") no-repeat center center fixed;
-      background-size: cover; /* Ensures the GIF covers the entire background */
+      background-size: cover;
     }
 
     .slider-wrapper {
@@ -167,28 +165,28 @@
         <div class="card-item swiper-slide">
           <img src="https://blog.hubspot.com/hubfs/homepage-web-design.jpg" alt="User Image" class="user-image">
           <h2 class="user-name">HOMEPAGE</h2>
-          <p class="user-profession">Activity Number One</p>
-          <button class="message-button">See</button>
-        </div>
-
-        <div class="card-item swiper-slide">
-          <img src="https://i.pinimg.com/originals/f0/5e/72/f05e726058cb942b45e5621d47b7c2a8.jpg" alt="User Image" class="user-image">
-          <h2 class="user-name">  Unknown</h2>
-          <p class="user-profession">Activity Number Two</p>
+          <p class="user-profession">Activity Number 1</p>
           <button class="message-button">See</button>
         </div>
 
         <div class="card-item swiper-slide">
           <img src="https://i.pinimg.com/originals/f0/5e/72/f05e726058cb942b45e5621d47b7c2a8.jpg" alt="User Image" class="user-image">
           <h2 class="user-name">Unknown</h2>
-          <p class="user-profession">Activity Number Three</p>
+          <p class="user-profession">Activity Number 2</p>
           <button class="message-button">See</button>
         </div>
 
         <div class="card-item swiper-slide">
           <img src="https://i.pinimg.com/originals/f0/5e/72/f05e726058cb942b45e5621d47b7c2a8.jpg" alt="User Image" class="user-image">
           <h2 class="user-name">Unknown</h2>
-          <p class="user-profession">Activity Number Four</p>
+          <p class="user-profession">Activity Number 3</p>
+          <button class="message-button">See</button>
+        </div>
+
+        <div class="card-item swiper-slide">
+          <img src="https://i.pinimg.com/originals/f0/5e/72/f05e726058cb942b45e5621d47b7c2a8.jpg" alt="User Image" class="user-image">
+          <h2 class="user-name">Unknown</h2>
+          <p class="user-profession">Activity Number 4</p>
           <button class="message-button">See</button>
         </div>
       </div>
@@ -203,43 +201,59 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <!-- Custom script -->
-  <script>
-    const swiper = new Swiper('.slider-wrapper', {
-      loop: true,
-      grabCursor: true,
-      spaceBetween: 30,
+ <!-- Custom script -->
+<script>
+  // Initialize Swiper
+  const swiper = new Swiper('.slider-wrapper', {
+    loop: true,
+    grabCursor: true,
+    spaceBetween: 30,
 
-      // Pagination bullets
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-        dynamicBullets: true
+    // Pagination bullets
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      dynamicBullets: true
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    // Responsive breakpoints
+    breakpoints: {
+      0: {
+        slidesPerView: 1
       },
-
-      // Navigation arrows
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+      768: {
+        slidesPerView: 2
       },
+      1024: {
+        slidesPerView: 3
+      }
+    }
+  });
 
-      // Responsive breakpoints
-      breakpoints: {
-        0: {
-          slidesPerView: 1
-        },
-        768: {
-          slidesPerView: 2
-        },
-        1024: {
-          slidesPerView: 3
-        }
+  // Hide loading screen once the content is loaded
+  window.onload = function() {
+    document.getElementById('loading').style.display = 'none';
+  };
+
+  // Add click event listeners to the "See" buttons
+  const buttons = document.querySelectorAll('.message-button');
+  buttons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      // Check if the button corresponds to the "HOMEPAGE" card (index 0)
+      if (index === 0) {
+        window.location.href = 'index.html'; // Redirect only for HOMEPAGE card
+      } else {
+        alert('No redirection for this activity.'); // Optional message for other cards
       }
     });
+  });
+</script>
 
-    // Hide loading screen once the content is loaded
-    window.onload = function() {
-      document.getElementById('loading').style.display = 'none';
-    };
-  </script>
 </body>
 </html>
