@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Rome, Italy - Top 10 Places to Visit</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0c0c0c;
+            color: #fff;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Parallax Image Section */
+        .parallax-container {
+            height: 100vh;
+            background: url('https://th.bing.com/th/id/R.dec0d576de73c475fd96b991b7237822?rik=NELsxcgo4eeiUQ&riu=http%3a%2f%2fwww.orminatours.com%2fwp-content%2fuploads%2f2015%2f02%2fItaly-Rome-St-Peters-cathedral-SS_110843582.jpg&ehk=T4OAG2GL0H3yxb8FumhAzJw0FQggqYmrOLgN4PzmlOU%3d&risl=&pid=ImgRaw&r=0') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Glowing Text Styling */
+        h1 {
+            font-size: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            background: linear-gradient(45deg, #ffb703, #fb8500);
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+            animation: glowing 2s infinite alternate;
+            z-index: 1;
+        }
+
+        @keyframes glowing {
+            from {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 183, 3, 0.8), 0 0 40px rgba(255, 183, 3, 1);
+            }
+            to {
+                text-shadow: 0 0 40px rgba(255, 255, 255, 0.8), 0 0 60px rgba(255, 183, 3, 1), 0 0 80px rgba(255, 183, 3, 1);
+            }
+        }
+
+        /* Overlay for Darkening Background */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+
+        /* Text Section Styling */
+        .description-container {
+            padding: 60px 20px;
+            background-color: #111;
+            text-align: center;
+        }
+
+        .description-container p {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            color: #eee;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .places-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 50px 20px;
+            background-color: #222;
+        }
+
+        .place {
+            background-color: #333;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .place img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .place h3 {
+            font-size: 1.5rem;
+            margin: 20px 0;
+        }
+
+        .place p {
+            font-size: 1.2rem;
+            padding: 0 20px 20px;
+        }
+
+        .place:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(255, 183, 3, 0.4);
+        }
+
+        /* Scroll Effect */
+        .scroll-down {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            z-index: 1;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translate(-50%, 0);
+            }
+            50% {
+                transform: translate(-50%, -15px);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Include Font Awesome for icons (if not already included) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<!-- Parallax Image Section with Button on the Right -->
+<div class="parallax-container" style="position: relative; height: 100vh; background: url('https://www.leisure-italy.com/wp-content/uploads/2019/07/Rome-by-night-1.jpg') no-repeat center center fixed; background-size: cover;">
+    <!-- Button with a symbolic icon (arrow) positioned on the right -->
+    <button onclick="location.href='gallery.html'" style="
+        padding: 12px 25px; 
+        background: linear-gradient(135deg, #007BFF, #00d4ff); 
+        color: white; 
+        border: none; 
+        border-radius: 50px; 
+        cursor: pointer; 
+        font-size: 18px; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+        transition: all 0.3s ease-in-out;
+        position: absolute;
+        top: 20px; 
+        right: 20px;  /* Align button to the right */
+        z-index: 10; /* Ensure button is above other elements */
+    ">
+      <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> <!-- Left arrow icon -->
+      Back to Gallery
+    </button>
+
+    <!-- Heading and overlay section -->
+    <h1 style="color: white; text-align: center; font-size: 4rem; margin-top: 20%;">Rome, Italy</h1>
+    <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4);"></div>
+    <div class="scroll-down" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; font-size: 1.5rem; cursor: pointer;">
+        Scroll Down ⌄
+    </div>
+</div>
+
+<!-- Aesthetic Styles -->
+<style>
+  button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  button:focus {
+    outline: none;
+  }
+
+  .parallax-container {
+    position: relative;
+    background: url('https://www.leisure-italy.com/wp-content/uploads/2019/07/Rome-by-night-1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    text-align: center;
+  }
+
+  .parallax-container h1 {
+    color: white;
+    font-size: 4rem;
+    font-weight: bold;
+    margin-top: 20%;
+  }
+
+  .parallax-container .scroll-down {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .parallax-container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+  }
+</style>
+
+
+
+    <!-- Text Section -->
+    <div class="description-container">
+        <p>
+            Rome, Italy is a city full of history, culture, and stunning architecture. From the iconic landmarks to hidden gems, Rome offers an unforgettable experience. Here's a look at the top 10 places to visit while in Rome.
+        </p>
+    </div>
+   
+      
+    <!-- Top 10 Places to Visit in Rome -->
+    <div class="places-container">
+        <div class="place">
+            <img src="https://jooinn.com/images/colosseum-in-rome-3.jpg" alt="Colosseum">
+            <h3>Colosseum</h3>
+            <p>The Colosseum is one of Rome's most iconic landmarks, offering a glimpse into the ancient gladiator battles and Roman history.</p>
+        </div>
+        <div class="place">
+            <img src="https://th.bing.com/th/id/OIP.yVhLAiPMbCqPTtKzBNwfnAHaFj?rs=1&pid=ImgDetMain" alt="Vatican Museums">
+            <h3>Vatican Museums</h3>
+            <p>Explore one of the world's largest and most impressive art collections, featuring works by Michelangelo, Raphael, and many more.</p>
+        </div>
+        <div class="place">
+            <img src="https://th.bing.com/th/id/OIP.Z1jGCDN1GIDCrM-3DoS7VQHaE8?rs=1&pid=ImgDetMain" alt="Pantheon">
+            <h3>Pantheon</h3>
+            <p>A well-preserved ancient Roman temple, now a church, the Pantheon is famous for its massive dome and oculus.</p>
+        </div>
+        <div class="place">
+            <img src="https://www.benvenutolimos.com/blog/wp-content/uploads/2017/11/32031500_xl-1.jpg" alt="Trevi Fountain">
+            <h3>Trevi Fountain</h3>
+            <p>One of the largest and most famous fountains in the world, known for its stunning Baroque design and tradition of throwing coins for good luck.</p>
+        </div>
+        <div class="place">
+            <img src="https://www.tripsavvy.com/thmb/9ti8qRV3BpJDWGOxz150rKLg6YA=/2123x1413/filters:fill(auto,1)/GettyImages-531972647-5946f1425f9b58d58a550a90.jpg" alt="St. Peter's Square">
+            <h3>St. Peter's Square</h3>
+            <p>A grand square located in Vatican City, known for its magnificent colonnades and the impressive St. Peter's Basilica.</p>
+        </div>
+        <div class="place">
+            <img src="https://www.wantedinrome.com/i/preview/storage/uploads/2020/02/Campo_dei_Fiori.jpg" alt="Campo de' Fiori">
+            <h3>Campo de' Fiori</h3>
+            <p>A bustling market square during the day and vibrant nightlife spot at night, perfect for those looking to immerse themselves in Roman culture.</p>
+        </div>
+        <div class="place">
+            <img src="https://www.aesu.com/wp-content/uploads/2017/06/roman-forum.jpg" alt="Roman Forum">
+            <h3>Roman Forum</h3>
+            <p>Walk through the heart of ancient Rome, with ruins of temples, basilicas, and the political center of the Roman Empire.</p>
+        </div>
+        <div class="place">
+            <img src="https://www.civitatis.com/f/italia/roma/guia/gianicolo.jpg" alt="Gianicolo Hill">
+            <h3>Gianicolo Hill</h3>
+            <p>Enjoy panoramic views of Rome from this hill, which offers some of the best views of the city's historic landmarks.</p>
+        </div>
+        <div class="place">
+            <img src="https://www.foxtrail.it/wp-content/uploads/2019/03/Villa-Borghese-Gardens-Rome.jpg" alt="Villa Borghese Gardens">
+            <h3>Villa Borghese Gardens</h3>
+            <p>A peaceful green oasis in the heart of Rome, perfect for a leisurely stroll or a relaxing afternoon in nature.</p>
+        </div>
+        <div class="place">
+            <img src="https://th.bing.com/th/id/OIP.PLXMakUH4aP1eL95S6yPVwAAAA?rs=1&pid=ImgDetMain" alt="Spanish Steps">
+            <h3>Spanish Steps</h3>
+            <p>Famous for its grand staircase, the Spanish Steps connect the Piazza di Spagna with the Trinità dei Monti church at the top.</p>
+        </div>
+        
+    </div>
+
+
+
+    
+
+</body>
+</html>

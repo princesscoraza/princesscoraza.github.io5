@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Turkey</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0c0c0c;
+            color: #fff;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Parallax Image Section */
+        .parallax-container {
+            height: 100vh;
+            background: url('https://th.bing.com/th/id/R.dec0d576de73c475fd96b991b7237822?rik=NELsxcgo4eeiUQ&riu=http%3a%2f%2fwww.orminatours.com%2fwp-content%2fuploads%2f2015%2f02%2fItaly-Rome-St-Peters-cathedral-SS_110843582.jpg&ehk=T4OAG2GL0H3yxb8FumhAzJw0FQggqYmrOLgN4PzmlOU%3d&risl=&pid=ImgRaw&r=0') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Glowing Text Styling */
+        h1 {
+            font-size: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            background: linear-gradient(45deg, #ffb703, #fb8500);
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+            animation: glowing 2s infinite alternate;
+            z-index: 1;
+        }
+
+        @keyframes glowing {
+            from {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 183, 3, 0.8), 0 0 40px rgba(255, 183, 3, 1);
+            }
+
+            to {
+                text-shadow: 0 0 40px rgba(255, 255, 255, 0.8), 0 0 60px rgba(255, 183, 3, 1), 0 0 80px rgba(255, 183, 3, 1);
+            }
+        }
+
+        /* Overlay for Darkening Background */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+
+        /* Text Section Styling */
+        .description-container {
+            padding: 60px 20px;
+            background-color: #111;
+            text-align: center;
+        }
+
+        .description-container p {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            color: #eee;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .places-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 50px 20px;
+            background-color: #222;
+        }
+
+        .place {
+            background-color: #333;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .place img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .place h3 {
+            font-size: 1.5rem;
+            margin: 20px 0;
+        }
+
+        .place p {
+            font-size: 1.2rem;
+            padding: 0 20px 20px;
+        }
+
+        .place:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(255, 183, 3, 0.4);
+        }
+
+        /* Scroll Effect */
+        .scroll-down {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            z-index: 1;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translate(-50%, 0);
+            }
+
+            50% {
+                transform: translate(-50%, -15px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Include Font Awesome for icons (if not already included) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Parallax Image Section with Button on the Right -->
+    <div class="parallax-container"
+        style="position: relative; height: 100vh; background: url('https://4.bp.blogspot.com/-oM1HrMjk50w/VYpgZaUzdHI/AAAAAAAAAe8/kNAfEr06JhU/s1600/Travell+to+Turkey.jpg') no-repeat center center fixed; background-size: cover;">
+        <!-- Button with a symbolic icon (arrow) positioned on the right -->
+        <button onclick="location.href='gallery.html'" style="
+        padding: 12px 25px; 
+        background: linear-gradient(135deg, #007BFF, #00d4ff); 
+        color: white; 
+        border: none; 
+        border-radius: 50px; 
+        cursor: pointer; 
+        font-size: 18px; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+        transition: all 0.3s ease-in-out;
+        position: absolute;
+        top: 20px; 
+        right: 20px;  /* Align button to the right */
+        z-index: 10; /* Ensure button is above other elements */
+    ">
+            <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> <!-- Left arrow icon -->
+            Back to Gallery
+        </button>
+
+        <!-- Heading and overlay section -->
+        <h1 style="color: white; text-align: center; font-size: 4rem; margin-top: 20%;">Turkey</h1>
+        <div class="overlay"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4);">
+        </div>
+        <div class="scroll-down"
+            style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; font-size: 1.5rem; cursor: pointer;">
+            Scroll Down ⌄
+        </div>
+    </div>
+
+    <!-- Aesthetic Styles -->
+    <style>
+        button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        .parallax-container {
+            position: relative;
+            background: url('https://assets.vogue.com/photos/5e387ae1be72df00088bf8c8/master/w_2560%2Cc_limit/EEX74X.jpg') no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
+        }
+
+        .parallax-container h1 {
+            color: white;
+            font-size: 4rem;
+            font-weight: bold;
+            margin-top: 20%;
+        }
+
+        .parallax-container .scroll-down {
+            font-size: 1.5rem;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .parallax-container .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+    </style>
+
+
+    <!-- Text Section -->
+    <div class="description-container">
+        <p>
+            Welcome to Discover Turkey – your gateway to a land of stunning landscapes, rich history, and vibrant culture!
+
+Nestled between East and West, Turkey offers a unique blend of ancient traditions and modern attractions. From the bustling bazaars of Istanbul, where East meets West, to the pristine beaches along the Mediterranean coast, every corner of Turkey tells a story.
+
+Start your adventure here, where history comes alive and every moment offers something extraordinary!
+        </p>
+    </div>
+
+    <!-- Top 4 Places to Visit in Turkey -->
+<div class="places-container">
+    <div class="place">
+        <img src="https://touristjourney.com/wp-content/uploads/2020/08/Discover-the-ruins-of-ancient-Ephesus-on-the-Ancient-Ephesus-Tour-from-Selcuk-and-Kusadasi-scaled.jpg" alt="Ephesus">
+        <h3>Ephesus</h3>
+        <p>An ancient city that houses the grand Library of Celsus and the Temple of Artemis, one of the Seven Wonders of the Ancient World. A must-visit for history enthusiasts.</p>
+    </div>
+    <div class="place">
+        <img src="https://th.bing.com/th/id/R.bbd6469513dacea95a00e422c5998814?rik=M05cELN6bgUVcQ&riu=http%3a%2f%2fwww.youramazingplaces.com%2fwp-content%2fuploads%2f2015%2f01%2fCappadocia-Turkey-3.jpg&ehk=I5WJLPNawYJ7IDHkPJ2ok6FUw4IWusfngJfSsNP0bS4%3d&risl=&pid=ImgRaw&r=s" alt="Cappadocia">
+        <h3>Cappadocia</h3>
+        <p>Known for its otherworldly landscapes, fairy chimneys, and hot air balloon rides, Cappadocia offers a magical experience unlike any other.</p>
+    </div>
+    <div class="place">
+        <img src="https://th.bing.com/th/id/R.2e9080c464bbae04abf6e0b15b562d26?rik=oMcqkF0rfrmfDA&riu=http%3a%2f%2fmedia2.popsugar-assets.com%2ffiles%2f2014%2f05%2f15%2f087%2fn%2f1922441%2f9b33e0ce818d0c9b_shutterstock_165950306.xxxlarge_2x%2fi%2fPamukkale-Turkey.jpg&ehk=FHjRkd0LiE7xpHahVoTb6UI6U1VdSK0ADlvPanCTeFE%3d&risl=&pid=ImgRaw&r=0" alt="Pamukkale">
+        <h3>Pamukkale</h3>
+        <p>Famous for its surreal white travertine terraces and thermal waters, Pamukkale is a natural wonder that will leave you mesmerized.</p>
+    </div>
+    <div class="place">
+        <img src="https://idsb.tmgrup.com.tr/ly/uploads/images/2023/04/21/268740.jpg" alt="Istanbul - Blue Mosque">
+        <h3>Istanbul - Blue Mosque</h3>
+        <p>A symbol of Istanbul's rich history, the Blue Mosque is a stunning example of Ottoman architecture with its striking blue tiles and majestic domes.</p>
+    </div>
+</div>
+
+
+
+    </div>
