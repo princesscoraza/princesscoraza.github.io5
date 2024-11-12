@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Barcelona</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0c0c0c;
+            color: #fff;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Parallax Image Section */
+        .parallax-container {
+            height: 100vh;
+            background: url('https://th.bing.com/th/id/R.dec0d576de73c475fd96b991b7237822?rik=NELsxcgo4eeiUQ&riu=http%3a%2f%2fwww.orminatours.com%2fwp-content%2fuploads%2f2015%2f02%2fItaly-Rome-St-Peters-cathedral-SS_110843582.jpg&ehk=T4OAG2GL0H3yxb8FumhAzJw0FQggqYmrOLgN4PzmlOU%3d&risl=&pid=ImgRaw&r=0') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Glowing Text Styling */
+        h1 {
+            font-size: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            background: linear-gradient(45deg, #ffb703, #fb8500);
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+            animation: glowing 2s infinite alternate;
+            z-index: 1;
+        }
+
+        @keyframes glowing {
+            from {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 183, 3, 0.8), 0 0 40px rgba(255, 183, 3, 1);
+            }
+            to {
+                text-shadow: 0 0 40px rgba(255, 255, 255, 0.8), 0 0 60px rgba(255, 183, 3, 1), 0 0 80px rgba(255, 183, 3, 1);
+            }
+        }
+
+        /* Overlay for Darkening Background */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+
+        /* Text Section Styling */
+        .description-container {
+            padding: 60px 20px;
+            background-color: #111;
+            text-align: center;
+        }
+
+        .description-container p {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            color: #eee;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .places-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 50px 20px;
+            background-color: #222;
+        }
+
+        .place {
+            background-color: #333;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .place img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .place h3 {
+            font-size: 1.5rem;
+            margin: 20px 0;
+        }
+
+        .place p {
+            font-size: 1.2rem;
+            padding: 0 20px 20px;
+        }
+
+        .place:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(255, 183, 3, 0.4);
+        }
+
+        /* Scroll Effect */
+        .scroll-down {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            z-index: 1;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translate(-50%, 0);
+            }
+            50% {
+                transform: translate(-50%, -15px);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Include Font Awesome for icons (if not already included) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<!-- Parallax Image Section with Button on the Right -->
+<div class="parallax-container" style="position: relative; height: 100vh; background: url('https://th.bing.com/th/id/R.a1c15d61155b05c18b8c4ffa8e5f2e17?rik=BYtQtcDc9Se4FQ&riu=http%3a%2f%2fblog.likibu.com%2ffr%2fwp-content%2fuploads%2f2018%2f05%2fBarcelone_Espagne_Gorgeous-and-amazing-Park-Guel-in-Barcelona-min.jpeg&ehk=K3j2KL11arGP5spqdt1zazO4kJYdBNAweOWmF%2b7%2bHfk%3d&risl=&pid=ImgRaw&r=0') no-repeat center center fixed; background-size: cover;">
+    <!-- Button with a symbolic icon (arrow) positioned on the right -->
+    <button onclick="location.href='gallery.html'" style="
+        padding: 12px 25px; 
+        background: linear-gradient(135deg, #007BFF, #00d4ff); 
+        color: white; 
+        border: none; 
+        border-radius: 50px; 
+        cursor: pointer; 
+        font-size: 18px; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+        transition: all 0.3s ease-in-out;
+        position: absolute;
+        top: 20px; 
+        right: 20px;  /* Align button to the right */
+        z-index: 10; /* Ensure button is above other elements */
+    ">
+      <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> <!-- Left arrow icon -->
+      Back to Gallery
+    </button>
+
+    <!-- Heading and overlay section -->
+    <h1 style="color: white; text-align: center; font-size: 4rem; margin-top: 20%;">Barcelona</h1>
+    <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4);"></div>
+    <div class="scroll-down" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; font-size: 1.5rem; cursor: pointer;">
+        Scroll Down ⌄
+    </div>
+</div>
+
+<!-- Aesthetic Styles -->
+<style>
+  button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  button:focus {
+    outline: none;
+  }
+
+  .parallax-container {
+    position: relative;
+    background: url('https://leosystem.travel/wp-content/uploads/2020/04/226789087.jpg') no-repeat center center fixed;
+    background-size: cover;
+    text-align: center;
+  }
+
+  .parallax-container h1 {
+    color: white;
+    font-size: 4rem;
+    font-weight: bold;
+    margin-top: 20%;
+  }
+
+  .parallax-container .scroll-down {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .parallax-container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+  }
+</style>
+
+
+
+    <!-- Text Section -->
+    <div class="description-container">
+        <p>
+            Get ready to explore a city that blends art, history, and Mediterranean charm. From the awe-inspiring Sagrada Família to the vibrant atmosphere of La Rambla, Barcelona is a feast for the senses. Whether you're wandering through the Gothic Quarter, relaxing at the beach, or discovering Picasso’s masterpieces, Barcelona offers unforgettable experiences for every traveler. Enjoy every moment in this beautiful city, where tradition meets modern flair!
+        </p>
+    </div>
+   
+      
+   <!-- Top 10 Places to Visit in Barcelona -->
+<div class="places-container">
+    <div class="place">
+        <img src="https://cdn1.matadornetwork.com/blogs/1/2023/02/Sagrada-familia-night.jpg" alt="Sagrada Família">
+        <h3>Sagrada Família</h3>
+        <p>A masterpiece of Catalan Modernism, this unfinished basilica is a must-see for its intricate architecture and stunning stained glass windows.</p>
+    </div>
+    <div class="place">
+        <img src="https://cdn.getyourguide.com/img/location/53bffbaac9423-m1398847398.jpg/88.jpg" alt="Park Güell">
+        <h3>Park Güell</h3>
+        <p>A whimsical park designed by Antoni Gaudí, featuring colorful mosaic benches, whimsical structures, and stunning views of the city.</p>
+    </div>
+    <div class="place">
+        <img src="https://www.academia-barcelona.com/wp-content/uploads/2019/12/catedral-2048x1365.jpg" alt="Gothic Quarter">
+        <h3>Gothic Quarter</h3>
+        <p>The historic heart of Barcelona, this charming neighborhood is filled with narrow cobblestone streets, medieval churches, and charming shops.</p>
+    </div>
+    <div class="place">
+        <img src="https://www.fcbarcelona.cz/uploads/SekceKlub/Camp-Nou-3.jpg" alt="Camp Nou">
+        <h3>Camp Nou</h3>
+        <p>The home of FC Barcelona, this massive stadium is a must-visit for football fans. Take a tour to learn about the club's history and see the players' dressing rooms.</p>
+    </div>
+    <div class="place">
+        <img src="https://a.cdn-hotels.com/gdcs/production132/d1648/561ec893-e380-439b-a977-b6ebbc344ebc.jpg" alt="Barcelona Beach">
+        <h3>Barcelona Beach</h3>
+        <p>Relax and soak up the sun on Barcelona's famous beach, a vibrant stretch of sand with plenty of restaurants, cafes, and bars.</p>
+    </div>
+    <div class="place">
+        <img src="https://lp-cms-production.imgix.net/2021-08/GettyRF_525241683.jpg?auto=format&fit=crop&sharp=10&vib=20&ixlib=react-8.6.4&w=850&q=20&dpr=5" alt="La Rambla">
+        <h3>La Rambla</h3>
+        <p>A bustling pedestrian street lined with shops, restaurants, and street performers. It's a great place to people-watch and soak up the vibrant atmosphere of Barcelona.</p>
+    </div>
+    <div class="place">
+        <img src="https://cdn.getyourguide.com/img/tour/aa3ab6c4aaa9cc0c.jpeg/146.jpg" alt="Casa Batlló">
+        <h3>Casa Batlló</h3>
+        <p>Another masterpiece by Antoni Gaudí, this modernist house is known for its unique facade and whimsical interior.</p>
+    </div>
+    <div class="place">
+        <img src="https://i.pinimg.com/originals/b8/48/ce/b848ce6b865601c2e0a79c69dda6db6e.jpg" alt="Casa Milà">
+        <h3>Casa Milà</h3>
+        <p>Also known as La Pedrera, this modernist building is a UNESCO World Heritage Site and features a rooftop terrace with stunning views of the city.</p>
+    </div>
+    <div class="place">
+        <img src="https://www.shbarcelona.com/blog/en/wp-content/uploads/2015/07/Montju%C3%AFc-Barcelona-1024x685.jpg" alt="Montjuïc">
+        <h3>Montjuïc</h3>
+        <p>A hill overlooking Barcelona, Montjuïc is home to several attractions, including the Magic Fountain, the Olympic Stadium, and the MNAC museum.</p>
+    </div>
+    <div class="place">
+        <img src="https://mymodernmet.com/wp/wp-content/uploads/2021/02/Palau-Musica-Catalana-1-scaled.jpg" alt="Palau de la Música Catalana">
+        <h3>Palau de la Música Catalana</h3>
+        <p>A stunning concert hall known for its intricate stained glass windows and beautiful mosaics. Take a tour to admire its architectural beauty and learn about its history.</p>
+    </div>
+</div>
+        
+    </div>
+
+
+
+    
+
+</body>
+</html>

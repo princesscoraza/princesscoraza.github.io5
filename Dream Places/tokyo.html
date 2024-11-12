@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tokyo, Japan</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0c0c0c;
+            color: #fff;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Parallax Image Section */
+        .parallax-container {
+            height: 100vh;
+            background: url('https://th.bing.com/th/id/R.dec0d576de73c475fd96b991b7237822?rik=NELsxcgo4eeiUQ&riu=http%3a%2f%2fwww.orminatours.com%2fwp-content%2fuploads%2f2015%2f02%2fItaly-Rome-St-Peters-cathedral-SS_110843582.jpg&ehk=T4OAG2GL0H3yxb8FumhAzJw0FQggqYmrOLgN4PzmlOU%3d&risl=&pid=ImgRaw&r=0') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Glowing Text Styling */
+        h1 {
+            font-size: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            background: linear-gradient(45deg, #ffb703, #fb8500);
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+            animation: glowing 2s infinite alternate;
+            z-index: 1;
+        }
+
+        @keyframes glowing {
+            from {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 183, 3, 0.8), 0 0 40px rgba(255, 183, 3, 1);
+            }
+            to {
+                text-shadow: 0 0 40px rgba(255, 255, 255, 0.8), 0 0 60px rgba(255, 183, 3, 1), 0 0 80px rgba(255, 183, 3, 1);
+            }
+        }
+
+        /* Overlay for Darkening Background */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+
+        /* Text Section Styling */
+        .description-container {
+            padding: 60px 20px;
+            background-color: #111;
+            text-align: center;
+        }
+
+        .description-container p {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            color: #eee;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .places-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 50px 20px;
+            background-color: #222;
+        }
+
+        .place {
+            background-color: #333;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .place img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .place h3 {
+            font-size: 1.5rem;
+            margin: 20px 0;
+        }
+
+        .place p {
+            font-size: 1.2rem;
+            padding: 0 20px 20px;
+        }
+
+        .place:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(255, 183, 3, 0.4);
+        }
+
+        /* Scroll Effect */
+        .scroll-down {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            z-index: 1;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translate(-50%, 0);
+            }
+            50% {
+                transform: translate(-50%, -15px);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Include Font Awesome for icons (if not already included) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<!-- Parallax Image Section with Button on the Right -->
+<div class="parallax-container" style="position: relative; height: 100vh; background: url('https://assets.vogue.com/photos/5e387ae1be72df00088bf8c8/master/w_2560%2Cc_limit/EEX74X.jpg') no-repeat center center fixed; background-size: cover;">
+    <!-- Button with a symbolic icon (arrow) positioned on the right -->
+    <button onclick="location.href='gallery.html'" style="
+        padding: 12px 25px; 
+        background: linear-gradient(135deg, #007BFF, #00d4ff); 
+        color: white; 
+        border: none; 
+        border-radius: 50px; 
+        cursor: pointer; 
+        font-size: 18px; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+        transition: all 0.3s ease-in-out;
+        position: absolute;
+        top: 20px; 
+        right: 20px;  /* Align button to the right */
+        z-index: 10; /* Ensure button is above other elements */
+    ">
+      <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> <!-- Left arrow icon -->
+      Back to Gallery
+    </button>
+
+    <!-- Heading and overlay section -->
+    <h1 style="color: white; text-align: center; font-size: 4rem; margin-top: 20%;">Tokyo, Japan</h1>
+    <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4);"></div>
+    <div class="scroll-down" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; font-size: 1.5rem; cursor: pointer;">
+        Scroll Down ⌄
+    </div>
+</div>
+
+<!-- Aesthetic Styles -->
+<style>
+  button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  button:focus {
+    outline: none;
+  }
+
+  .parallax-container {
+    position: relative;
+    background: url('https://assets.vogue.com/photos/5e387ae1be72df00088bf8c8/master/w_2560%2Cc_limit/EEX74X.jpg') no-repeat center center fixed;
+    background-size: cover;
+    text-align: center;
+  }
+
+  .parallax-container h1 {
+    color: white;
+    font-size: 4rem;
+    font-weight: bold;
+    margin-top: 20%;
+  }
+
+  .parallax-container .scroll-down {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .parallax-container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+  }
+</style>
+
+ <!-- Text Section -->
+ <div class="description-container">
+    <p>
+        Welcome to Tokyo, Japan – a dynamic metropolis where tradition meets innovation. As Japan's capital, Tokyo is a bustling hub of technology, culture, and history, offering an exciting fusion of old and new. From the neon-lit streets of Shibuya to the tranquil temples of Asakusa, Tokyo's diverse neighborhoods each tell their own unique story.
+    </p>
+</div>
+
+    <!-- Top 10 Places to Visit in Tokyo, Japan -->
+<div class="places-container">
+    <div class="place">
+        <img src="https://images.hdqwalls.com/wallpapers/tokyo-tower-0u.jpg" alt="Tokyo Tower">
+        <h3>Tokyo Tower</h3>
+        <p>An iconic symbol of Tokyo, offering panoramic views of the city, including a glimpse of Mount Fuji on clear days.</p>
+    </div>
+    <div class="place">
+        <img src="https://www.tripsavvy.com/thmb/pJgGwtavhNTzH0bRjgG5er2S5Lc=/2119x1415/filters:fill(auto,1)/GettyImages-1083328636-2419579ecdd440d2a534b7df4a8b7e0a.jpg" alt="Senso-ji Temple">
+        <h3>Senso-ji Temple</h3>
+        <p>Tokyo's oldest and most significant temple, located in the historic Asakusa district. A must-visit for its beautiful architecture and spiritual atmosphere.</p>
+    </div>
+    <div class="place">
+        <img src="https://th.bing.com/th/id/R.4483b94744c837b1c604bee91d6d8186?rik=ht0TEGxernToUg&riu=http%3a%2f%2fwww.travelcaffeine.com%2fwp-content%2fuploads%2f2016%2f03%2ftokyo-skytree-dusk-water-japan-bricker.jpg&ehk=wkeRhHEd37gBvCrBRdOJnY6Jos50MeFpx6ybcznNDMI%3d&risl=&pid=ImgRaw&r=0" alt="Tokyo Skytree">
+        <h3>Tokyo Skytree</h3>
+        <p>The tallest structure in Japan, this broadcasting tower offers stunning views of the city and beyond from its observation decks.</p>
+    </div>
+    <div class="place">
+        <img src="https://loving-tokyo.com/en/wp-content/uploads/2020/02/meiji-jingu-shrine-main-complex-200210134821003.jpg" alt="Meiji Shrine">
+        <h3>Meiji Shrine</h3>
+        <p>A tranquil Shinto shrine surrounded by a forest, dedicated to Emperor Meiji and Empress Shoken, offering a peaceful escape from the bustling city.</p>
+    </div>
+    <div class="place">
+        <img src="https://www.kcpinternational.com/wp-content/uploads/2023/04/Shibuya-Crossing.jpg" alt="Shibuya Crossing">
+        <h3>Shibuya Crossing</h3>
+        <p>One of the busiest pedestrian crossings in the world, Shibuya Crossing is an iconic sight representing the energy and vibrancy of modern Tokyo.</p>
+    </div>
+    <div class="place">
+        <img src="https://www.agoda.com/wp-content/uploads/2019/02/Ueno-Tokyo-Ueno-Park-with-cherry-blossom.jpg" alt="Ueno Park">
+        <h3>Ueno Park</h3>
+        <p>Famous for its cherry blossoms in spring, Ueno Park also features museums, a zoo, and tranquil walking paths.</p>
+    </div>
+    <div class="place">
+        <img src="https://jontotheworld.com/wp-content/uploads/2019/03/akihabara-japan.jpg" alt="Akihabara">
+        <h3>Akihabara</h3>
+        <p>A vibrant district known for its electronics shops, anime stores, and gaming culture, Akihabara is a must-visit for pop culture enthusiasts.</p>
+    </div>
+    <div class="place">
+        <img src="https://www.gotokyo.org/en/spot/81/images/81_0154_2_1400x1100.jpg" alt="Roppongi Hills">
+        <h3>Roppongi Hills</h3>
+        <p>A modern development in the heart of Tokyo, offering art museums, shopping, dining, and breathtaking views from the Mori Tower observation deck.</p>
+    </div>
+    <div class="place">
+        <img src="https://www.civitatis.com/f/japon/tokio/visita-guiada-asakusa-r32.jpg" alt="Asakusa">
+        <h3>Asakusa</h3>
+        <p>Home to Senso-ji Temple, Asakusa preserves the charm of old Tokyo with its traditional shops, markets, and cultural heritage.</p>
+    </div>
+    <div class="place">
+        <img src="https://rimage.gnst.jp/livejapan.com/public/article/detail/a/00/00/a0000132/img/basic/a0000132_main.jpg?20210609142000" alt="Odaiba">
+        <h3>Odaiba</h3>
+        <p>A futuristic island in Tokyo Bay, offering shopping, entertainment, and attractions like the giant Gundam statue and Rainbow Bridge.</p>
+    </div>
+</div>
