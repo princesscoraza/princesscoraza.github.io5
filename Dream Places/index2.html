@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Video Slider</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+    
+        /* Video Slider Styles */
+        .video-slider {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+        }
+    
+        .video-slider video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    
+        .content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            opacity: 0; /* Start hidden */
+            animation: fadeInQuintain 2s cubic-bezier(0.86, 0, 0.07, 1) forwards; /* Quintain effect */
+        }
+    
+        @keyframes fadeInQuintain {
+            0% {
+                transform: translateY(50px); /* Start below */
+                opacity: 0; /* Start invisible */
+            }
+            100% {
+                transform: translateY(0); /* End at normal position */
+                opacity: 1; /* Fully visible */
+            }
+        }
+    
+        .content h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+    
+        .content p {
+            font-size: 1.2rem;
+            margin-top: 15px;
+        }
+    
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content h1 {
+                font-size: 2rem;
+            }
+    
+            .content p {
+                font-size: 1rem;
+            }
+        }
+    
+        @media (max-width: 576px) {
+            .content h1 {
+                font-size: 1.5rem;
+            }
+    
+            .content p {
+                font-size: 0.9rem;
+            }
+        }
+    
+        /* Navbar */
+        .navbar {
+            background-color: transparent;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+        }
+    
+        .navbar a {
+            color: white !important;
+            font-size: 18px;
+            margin-right: 20px;
+        }
+    
+        /* Slider Dots */
+        .slider-dots {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            z-index: 2;
+        }
+    
+        .slider-dots span {
+            display: inline-block;
+            height: 12px;
+            width: 12px;
+            margin: 0 5px;
+            background-color: white;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    
+        .slider-dots span.active {
+            background-color: lightblue;
+        }
+    
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px;
+                text-align: center;
+            }
+    
+            .content h1 {
+                font-size: 2rem;
+            }
+    
+            .content p {
+                font-size: 1rem;
+            }
+    
+            .navbar a {
+                font-size: 16px;
+            }
+        }
+    
+        @media (max-width: 576px) {
+            .content h1 {
+                font-size: 1.5rem;
+            }
+    
+            .content p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+    
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">TRAVEL</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index2.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="About.html">About</a>
+                    </li>
+                   
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="123.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Video Slider Section -->
+    <div class="video-slider">
+        <video src="https://videos.pexels.com/video-files/6555146/6555146-hd_1920_1080_30fps.mp4" muted autoplay
+            loop></video>
+        <div class="content">
+            <h1>My Dream Travel Destination</h1> 
+
+            <a href="About.html" class="btn btn-primary mt-3">Read More</a>
+        </div>
+        <!-- 5 dots for 5 videos -->
+        <div class="slider-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Custom Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let currentSlide = 0;
+        const dots = document.querySelectorAll('.dot');
+        const videoElement = document.querySelector(".video-slider video");
+        const videos = [
+            "https://videos.pexels.com/video-files/6555146/6555146-hd_1920_1080_30fps.mp4",
+            "https://videos.pexels.com/video-files/6522955/6522955-uhd_2560_1440_30fps.mp4",
+            "https://videos.pexels.com/video-files/11467386/11467386-uhd_2732_1440_25fps.mp4",
+            "https://videos.pexels.com/video-files/9010899/9010899-uhd_2560_1440_30fps.mp4",
+            "https://videos.pexels.com/video-files/18246053/18246053-uhd_2560_1440_30fps.mp4",
+        ];
+
+        function showSlide(index) {
+            videoElement.src = videos[index];
+            dots.forEach(dot => dot.classList.remove("active"));
+            dots[index].classList.add("active");
+        }
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener("click", () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Shanghai, China</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0c0c0c;
+            color: #fff;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Parallax Image Section */
+        .parallax-container {
+            height: 100vh;
+            background: url('https://th.bing.com/th/id/R.dec0d576de73c475fd96b991b7237822?rik=NELsxcgo4eeiUQ&riu=http%3a%2f%2fwww.orminatours.com%2fwp-content%2fuploads%2f2015%2f02%2fItaly-Rome-St-Peters-cathedral-SS_110843582.jpg&ehk=T4OAG2GL0H3yxb8FumhAzJw0FQggqYmrOLgN4PzmlOU%3d&risl=&pid=ImgRaw&r=0') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Glowing Text Styling */
+        h1 {
+            font-size: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            background: linear-gradient(45deg, #ffb703, #fb8500);
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+            animation: glowing 2s infinite alternate;
+            z-index: 1;
+        }
+
+        @keyframes glowing {
+            from {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 183, 3, 0.8), 0 0 40px rgba(255, 183, 3, 1);
+            }
+            to {
+                text-shadow: 0 0 40px rgba(255, 255, 255, 0.8), 0 0 60px rgba(255, 183, 3, 1), 0 0 80px rgba(255, 183, 3, 1);
+            }
+        }
+
+        /* Overlay for Darkening Background */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+
+        /* Text Section Styling */
+        .description-container {
+            padding: 60px 20px;
+            background-color: #111;
+            text-align: center;
+        }
+
+        .description-container p {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            color: #eee;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .places-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 50px 20px;
+            background-color: #222;
+        }
+
+        .place {
+            background-color: #333;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .place img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .place h3 {
+            font-size: 1.5rem;
+            margin: 20px 0;
+        }
+
+        .place p {
+            font-size: 1.2rem;
+            padding: 0 20px 20px;
+        }
+
+        .place:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(255, 183, 3, 0.4);
+        }
+
+        /* Scroll Effect */
+        .scroll-down {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            z-index: 1;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translate(-50%, 0);
+            }
+            50% {
+                transform: translate(-50%, -15px);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Include Font Awesome for icons (if not already included) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<!-- Parallax Image Section with Button on the Right -->
+<div class="parallax-container" style="position: relative; height: 100vh; background: url('https://cdn.fodors.com/wp-content/uploads/2019/01/UltimateShanghai__HERO_shutterstock_1092929690.jpg') no-repeat center center fixed; background-size: cover;">
+    <!-- Button with a symbolic icon (arrow) positioned on the right -->
+    <button onclick="location.href='gallery.html'" style="
+        padding: 12px 25px; 
+        background: linear-gradient(135deg, #007BFF, #00d4ff); 
+        color: white; 
+        border: none; 
+        border-radius: 50px; 
+        cursor: pointer; 
+        font-size: 18px; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+        transition: all 0.3s ease-in-out;
+        position: absolute;
+        top: 20px; 
+        right: 20px;  /* Align button to the right */
+        z-index: 10; /* Ensure button is above other elements */
+    ">
+      <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> <!-- Left arrow icon -->
+      Back to Gallery
+    </button>
+
+    <!-- Heading and overlay section -->
+    <h1 style="color: white; text-align: center; font-size: 4rem; margin-top: 20%;">Shanghai, China</h1>
+    <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4);"></div>
+    <div class="scroll-down" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; font-size: 1.5rem; cursor: pointer;">
+        Scroll Down ⌄
+    </div>
+</div>
+
+<!-- Aesthetic Styles -->
+<style>
+  button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  button:focus {
+    outline: none;
+  }
+
+  .parallax-container {
+    position: relative;
+    background: url('https://assets.vogue.com/photos/5e387ae1be72df00088bf8c8/master/w_2560%2Cc_limit/EEX74X.jpg') no-repeat center center fixed;
+    background-size: cover;
+    text-align: center;
+  }
+
+  .parallax-container h1 {
+    color: white;
+    font-size: 4rem;
+    font-weight: bold;
+    margin-top: 20%;
+  }
+
+  .parallax-container .scroll-down {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .parallax-container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+  }
+</style>
+
+ <!-- Text Section -->
+ <div class="description-container">
+    <p>
+        Welcome to Shanghai, China – a vibrant city where tradition meets modernity. Known as the "Pearl of the Orient," Shanghai is a global financial hub and cultural powerhouse. With its futuristic skyline, historical landmarks, and bustling streets, Shanghai is a city of contrasts and endless opportunities for exploration.
+    </p>
+</div>
+
+    <!-- Top 4 Places to Visit in Shanghai, China -->
+<div class="places-container">
+    <div class="place">
+        <img src="https://cdn.getyourguide.com/img/location/5a9d5b41dbb99.jpeg/88.jpg" alt="The Bund">
+        <h3>The Bund</h3>
+        <p>An iconic waterfront promenade along the Huangpu River, offering stunning views of Shanghai's futuristic skyline and colonial-era architecture.</p>
+    </div>
+    <div class="place">
+        <img src="https://cdn.modlar.com/photos/9985/img/s_1920_x/oriental_pearl_tower_night_59de9eb97bf14.jpg" alt="Oriental Pearl Tower">
+        <h3>Oriental Pearl Tower</h3>
+        <p>This famous TV tower in Pudong offers breathtaking views of the city from its observation decks, along with exhibitions and a rotating restaurant.</p>
+    </div>
+    <div class="place">
+        <img src="https://www.china-roads.fr/wp-content/uploads/2017/11/Yu-Yuan-Gardens-1.jpg" alt="Yu Garden">
+        <h3>Yu Garden</h3>
+        <p>A classical Chinese garden with tranquil ponds, rockeries, and pavilions, offering a peaceful retreat in the heart of bustling Shanghai.</p>
+    </div>
+    <div class="place">
+        <img src="https://images.adsttc.com/media/images/56da/0955/e58e/ce77/ee00/0006/large_jpg/HIPWF_ShanghaiTower_ZhonghaiShen_141201_038.jpg?1457129803" alt="Shanghai Tower">
+        <h3>Shanghai Tower</h3>
+        <p>The tallest building in China, featuring an observation deck that provides panoramic views of the entire city. A marvel of modern engineering and design.</p>
+    </div>
+</div>

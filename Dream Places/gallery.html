@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Larger minimum size for images */
+            gap: 20px; /* Increased gap for better spacing */
+            padding: 20px;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+        .description {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .slider {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            z-index: 1000;
+        }
+        .slider img {
+            max-width: 90%;
+            max-height: 80%;
+            object-fit: contain;
+        }
+        .slider-description {
+            color: white;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        .nav-btn {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 30px;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .prev-btn {
+            left: 10px;
+        }
+        .next-btn {
+            right: 10px;
+        }
+
+        /* Media Queries for Responsive Layout */
+        @media (max-width: 768px) {
+            .gallery-container {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust grid for smaller screens */
+            }
+            .description {
+                font-size: 14px; /* Make the description font smaller on smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-container {
+                grid-template-columns: 1fr; /* Single column on very small screens */
+            }
+            .description {
+                font-size: 12px; /* Further reduce the font size for very small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gallery-container">
+        
+        <a href="berlin.html" class="gallery-item">
+            <img src="https://www.pixsavor.com/uploads/large/germany/berlin-capital-of-germany-at-night.jpg" alt="Image 10" class="gallery-img">
+            <div class="description">Berlin, Germany</div>
+        </a>
+        
+        <a href="barcelona.html" class="gallery-item">
+            <img src="https://api.time.com/wp-content/uploads/2023/03/Worlds-Greatest-Places-Barcelona-Spain.jpg" alt="Image 9" class="gallery-img">
+            <div class="description">Barcelona, Spain</div>
+        </a>
+        
+        <a href="tokyo.html" class="gallery-item">
+            <img src="https://s.yimg.com/ny/api/res/1.2/jvkzkQLZ51wXmHswNTiktg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA-/https://s.yimg.com/os/creatr-uploaded-images/2021-07/59a4bc60-f23c-11eb-bf75-c38993010fb7" alt="Image 8" class="gallery-img">
+            <div class="description">Tokyo, Japan</div>
+        </a>
+        
+        <a href="netherlands.html" class="gallery-item">
+            <img src="https://i2.wp.com/euroviajar.com/wp-content/uploads/2019/01/Binnenhof-Dutch-parliament-in-The-Hague.jpg?resize=2220%2C1453&ssl=1" alt="Image 7" class="gallery-img">
+            <div class="description">Netherlands</div>
+        </a>
+        
+        <a href="rome.html" class="gallery-item">
+            <img src="https://travel.usnews.com/dims4/USNEWS/c4b97cc/2147483647/resize/976x652%5E%3E/crop/976x652/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2Fsmaller_main_image_original.jpg" alt="Image 6" class="gallery-img">
+            <div class="description">Rome, Italy</div>
+        </a>
+        
+        <a href="turkey.html" class="gallery-item">
+            <img src="https://expatra.com/wp-content/uploads/2021/06/Old-town-Antalya-Turkey.jpg" alt="Image 5" class="gallery-img">
+            <div class="description">Turkey</div>
+        </a>
+        
+        <a href="shanghai.html" class="gallery-item">
+            <img src="https://www.tripnstay.com/wp-content/uploads/2018/02/shanghai-skyline.jpg" alt="Image 4" class="gallery-img">
+            <div class="description">Shanghai, China</div>
+        </a>
+        
+        <a href="london.html" class="gallery-item">
+            <img src="https://www.tripsavvy.com/thmb/-UY5RAw2UkQSqHniPHr9kGMLnIE=/2132x1406/filters:fill(auto,1)/GettyImages-1047502134-ebf7496b41e047759046e17b91f57679.jpg" alt="Image 3" class="gallery-img">
+            <div class="description">London, England</div>
+        </a>
+        
+        <a href="newyork.html" class="gallery-item">
+            <img src="https://salaryaftertax.com/img/blog/cost-of-living-in-new-york/statue-of-liberty-and-manhattan-skyline_v1.jpg" alt="Image 2" class="gallery-img">
+            <div class="description">New York City</div>
+        </a>
+        
+        <a href="newzealand.html" class="gallery-item">
+            <img src="https://wallpaperaccess.com/full/1192224.jpg" alt="Image 1" class="gallery-img">
+            <div class="description">New Zealand</div>
+        </a>
+        
+    </div>
+    
+</body>
+</html>
